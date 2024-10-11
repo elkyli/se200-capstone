@@ -58,13 +58,22 @@ export default function AddPolicyForm() {
 
       <div>
         <label htmlFor="type_of_policy">Type of Policy</label>
-        <input
-          type="text"
-          name="type_of_policy"
-          id="type_of_policy"
-          className="border px-2 py-1 w-full"
-          required
-        />
+        <select
+        name="type_of_policy"
+        id="type_of_policy"
+        className="border px-2 py-1 w-full"
+        required
+>
+        <option value="" disabled>Select a policy type</option>
+        <option value="travel_insurance">Travel Insurance</option>
+        <option value="health_insurance">Health Insurance</option>
+        <option value="home_insurance">Home Insurance</option>
+        <option value="business_insurance">Business Insurance</option>
+        <option value="car_insurance">Car Insurance</option>
+        <option value="personal_accident">Personal Accident</option>
+        <option value="critical_illness">Critical Illness</option>
+        <option value="life_insurance">Life Insurance</option>
+        </select>
       </div>
 
       <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
