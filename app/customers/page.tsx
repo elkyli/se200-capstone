@@ -1,7 +1,20 @@
+// export default function Customers() {
+//   return (
+//     <h1 className="text-sm font-bold underline">
+// This is customers page
+//   </h1>
+//   );
+// }
+
+import Sidebar from '../../components/ui/Sidebar'; // Adjust path if necessary
+
 export default function Customers() {
   return (
-    <h1 className="text-sm font-bold underline">
-This is customers page
-  </h1>
+    <div className="flex">
+      <Sidebar />
+      <main className="ml-14 p-4">
+        <h1>This is customers page </h1>
+      </main>
+    </div>
   );
 }

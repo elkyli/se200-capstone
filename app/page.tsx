@@ -1,4 +1,4 @@
-import Sidebar from '../components/ui/Sidebar'; // Adjust path if necessary
+import Sidebar from '../components/ui/Sidebar'; 
 
 export default function HomePage() {
   return (
@@ -11,12 +11,3 @@ export default function HomePage() {
     </div>
   );
 }
-
-// export default function Home() {
-//   return (
-//     <Sidebar />
-//     <h1 className="text-sm font-bold underline">
-// This is the home page
-//   </h1>
-//   );
-// }

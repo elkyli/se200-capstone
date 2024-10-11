@@ -11,7 +11,7 @@ export default function Sidebar() {
         {/* Tooltip and Link for Home */}
         <Tooltip>
           <TooltipTrigger>
-            <Link href="/home" className="flex h-9 w-9 items-center justify-center">
+            <Link href="/" className="flex h-9 w-9 items-center justify-center">
               <Home className="h-5 w-5 hover:text-blue-500" />
             </Link>
           </TooltipTrigger>
