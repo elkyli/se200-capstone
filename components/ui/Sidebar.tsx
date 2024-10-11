@@ -5,7 +5,7 @@ import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip
 
 export default function Sidebar() {
   return (
-    <aside className="fixed inset-y-0 left-0 z-10 w-14 flex-col border-r bg-background sm:flex">
+    <aside className="fixed inset-y-0 left-0 z-10 w-14 flex-col border-r bg-white sm:flex">
       <nav className="flex flex-col items-center gap-4 px-2 py-5">
         
         {/* Tooltip and Link for Home */}
