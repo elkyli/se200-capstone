@@ -1,11 +1,3 @@
-// export default function Customers() {
-//   return (
-//     <h1 className="text-sm font-bold underline">
-// This is customers page
-//   </h1>
-//   );
-// }
-
 import Sidebar from '../../components/ui/Sidebar'; // Adjust path if necessary
 
 export default function Customers() {
