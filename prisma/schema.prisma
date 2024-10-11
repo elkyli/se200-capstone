@@ -14,13 +14,16 @@ datasource db {
 }
 
 model insurance_policies {
-  insurance_policy_id      String @id
-  insurance_policy_name    String
-  base_price_sgd           Float
-  type_of_policy           String
-  policy_holder_id         String
+  insurance_policy_id    String  @id
+  insurance_policy_name  String
+  base_price_sgd         Decimal
+  type_of_policy         String
+}
+
+model policy_holders {
+  policy_holder_id         String  @id
   policy_holder_email      String
-  policy_holder_first_name  String
-  policy_holder_last_name   String
+  policy_holder_first_name String
+  policy_holder_last_name  String
   names_of_insurance_policies String
 }

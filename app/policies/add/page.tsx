@@ -10,13 +10,13 @@ export default function AddPolicyForm() {
     const base_price_sgd = parseFloat(formData.get('base_price_sgd') as string);
     const type_of_policy = formData.get('type_of_policy') as string;
 
-    const insurance_policies = await db.insurance_policies.create({
+    await db.insurance_policies.create({
       data: {
         insurance_policy_id,
         insurance_policy_name,
         base_price_sgd,
         type_of_policy,
-      }
+      },
     });
 
     redirect('/');
