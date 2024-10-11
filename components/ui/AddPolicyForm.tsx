@@ -18,7 +18,7 @@ export default function AddPolicyForm() {
       },
     });
 
-    redirect('/');
+    redirect('/policies');
   }
 
   return (
