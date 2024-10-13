@@ -8,7 +8,6 @@ export default function Sidebar() {
     <aside className="fixed inset-y-0 left-0 z-10 w-14 flex-col border-r bg-white sm:flex">
       <nav className="flex flex-col items-center gap-4 px-2 py-5">
         
-        {/* Tooltip and Link for Home */}
         <Tooltip>
           <TooltipTrigger>
             <Link href="/" className="flex h-9 w-9 items-center justify-center">
@@ -18,7 +17,6 @@ export default function Sidebar() {
           <TooltipContent>Home</TooltipContent>
         </Tooltip>
 
-        {/* Tooltip and Link for Policies */}
         <Tooltip>
           <TooltipTrigger>
             <Link href="/policies" className="flex h-9 w-9 items-center justify-center">
@@ -28,7 +26,6 @@ export default function Sidebar() {
           <TooltipContent>Policies</TooltipContent>
         </Tooltip>
 
-        {/* Tooltip and Link for Customers */}
         <Tooltip>
           <TooltipTrigger>
             <Link href="/customers" className="flex h-9 w-9 items-center justify-center">

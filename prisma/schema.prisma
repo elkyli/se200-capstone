@@ -13,17 +13,30 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model insurance_policies {
-  insurance_policy_id    String  @id
-  insurance_policy_name  String
-  base_price_sgd         Decimal
-  type_of_policy         String
+model PolicyHolder {
+  id        String               @id @default(uuid())
+  email     String               @unique
+  firstName String
+  lastName  String
+  policies  PolicyHolderPolicy[] // Relation to the join table
 }
 
-model policy_holders {
-  policy_holder_id         String  @id
-  policy_holder_email      String
-  policy_holder_first_name String
-  policy_holder_last_name  String
-  names_of_insurance_policies String
+model InsurancePolicy {
+  id            String               @id @default(uuid())
+  name          String
+  basePriceSgd  Float
+  typeOfPolicy  String
+  policyHolders PolicyHolderPolicy[] // Relation to the join table
+}
+
+model PolicyHolderPolicy {
+  policyHolderId    String
+  insurancePolicyId String
+
+  policyHolder      PolicyHolder      @relation(fields: [policyHolderId], references: [id])
+  insurancePolicy   InsurancePolicy   @relation(fields: [insurancePolicyId], references: [id])
+
+  @@id([policyHolderId, insurancePolicyId]) // Composite primary key
+  @@index([insurancePolicyId])
+  @@index([policyHolderId])
 }
