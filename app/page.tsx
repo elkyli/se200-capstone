@@ -6,7 +6,6 @@ export default function HomePage() {
       <Sidebar />
       <main className="ml-14 p-4">
         <h1>Home Page</h1>
-        <p>Welcome to the Home page!</p>
       </main>
     </div>
   );

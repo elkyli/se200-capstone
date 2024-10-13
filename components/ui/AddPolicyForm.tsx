@@ -1,5 +1,6 @@
 import { redirect } from 'next/navigation';
 import { db } from '../../db';
+import '../../styles/formStyles.css'; // Import the shared styles
 
 export default function AddPolicyForm() {
   async function handleSubmit(formData: FormData) {
@@ -23,45 +24,45 @@ export default function AddPolicyForm() {
 
   return (
     <form action={handleSubmit}>
-      <div>
-        <label htmlFor="insurance_policy_id">ID</label>
+      <div className="form-row">
+        <label htmlFor="insurance_policy_id" className="form-label">ID</label>
         <input
           type="text"
           name="insurance_policy_id"
           id="insurance_policy_id"
-          className="border px-2 py-1 w-full"
+          className="form-input"
           required
         />
       </div>
 
-      <div>
-        <label htmlFor="insurance_policy_name">Name</label>
+      <div className="form-row">
+        <label htmlFor="insurance_policy_name" className="form-label">Name</label>
         <input
           type="text"
           name="insurance_policy_name"
           id="insurance_policy_name"
-          className="border px-2 py-1 w-full"
+          className="form-input"
           required
         />
       </div>
 
-      <div>
-        <label htmlFor="base_price_sgd">Price (SGD)</label>
+      <div className="form-row">
+        <label htmlFor="base_price_sgd" className="form-label">Price (SGD)</label>
         <input
           type="number"
           name="base_price_sgd"
           id="base_price_sgd"
-          className="border px-2 py-1 w-full"
+          className="form-input"
           required
         />
       </div>
 
-      <div>
-        <label htmlFor="type_of_policy">Type of Policy</label>
+      <div className="form-row">
+        <label htmlFor="type_of_policy" className="form-label">Type of Policy</label>
         <select
           name="type_of_policy"
           id="type_of_policy"
-          className="border px-2 py-1 w-full"
+          className="form-select"
           required
         >
           <option value="" disabled>Select a policy type</option>
@@ -76,7 +77,7 @@ export default function AddPolicyForm() {
         </select>
       </div>
 
-      <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+      <button type="submit" className="form-button">
         Add Policy
       </button>
     </form>
