@@ -23,7 +23,7 @@ export default async function Policies() {
               <tr>
                 <th>ID</th>
                 <th>Name</th>
-                <th>Price (SGD)</th>
+                <th>Base Price (SGD)</th>
                 <th>Type of Policy</th>
               </tr>
             </thead>

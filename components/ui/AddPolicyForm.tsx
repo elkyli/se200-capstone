@@ -1,6 +1,6 @@
 import { redirect } from 'next/navigation';
 import { db } from '../../db';
-import '../../styles/formStyles.css'; // Import the shared styles
+import '../../styles/formStyles.css'; 
 
 export default function AddPolicyForm() {
   async function handleSubmit(formData: FormData) {
@@ -47,7 +47,7 @@ export default function AddPolicyForm() {
       </div>
 
       <div className="form-row">
-        <label htmlFor="base_price_sgd" className="form-label">Price (SGD)</label>
+        <label htmlFor="base_price_sgd" className="form-label">Price</label>
         <input
           type="number"
           name="base_price_sgd"
@@ -58,7 +58,7 @@ export default function AddPolicyForm() {
       </div>
 
       <div className="form-row">
-        <label htmlFor="type_of_policy" className="form-label">Type of Policy</label>
+        <label htmlFor="type_of_policy" className="form-label">Type</label>
         <select
           name="type_of_policy"
           id="type_of_policy"

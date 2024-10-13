@@ -7,14 +7,17 @@
 }
 
 .form-label {
-  @apply w-1/4;
+  @apply w-1/4 font-bold mb-4;
 }
 
 .form-input,
 .form-select {
-  @apply border px-2 py-1 w-3/4;
+  @apply border border-gray-300 rounded-md px-2 py-1 w-3/4 text-gray-400 mb-4; 
+  @apply max-w-[320px]; 
+  width: 100%; 
 }
 
 .form-button {
-  @apply bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600;
+  @apply bg-gray-900 text-white px-4 py-2 rounded hover:bg-gray-800 ml-auto; 
 }
+

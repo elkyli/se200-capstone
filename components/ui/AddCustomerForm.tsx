@@ -9,7 +9,7 @@ export default function AddCustomerForm() {
     const email = formData.get('email') as string;
     const firstName = formData.get('first_name') as string;
     const lastName = formData.get('last_name') as string;
-    const policies = formData.getAll('policies') as string[]; // For multiple selection
+    const policies = formData.getAll('policies') as string[]; 
 
     await db.policyHolder.create({
       data: {
@@ -17,7 +17,7 @@ export default function AddCustomerForm() {
         email,
         firstName,
         lastName,
-        policies, // Assuming the policies are related properly in your model
+        policies, 
       },
     });
 
@@ -92,7 +92,7 @@ export default function AddCustomerForm() {
       </div>
 
       <button type="submit" className="form-button">
-        Add Customer
+        Add Policy Holder
       </button>
     </form>
   );
