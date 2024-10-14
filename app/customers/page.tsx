@@ -45,11 +45,12 @@ export default async function Customers() {
                   <td>{holder.firstName}</td>
                   <td>{holder.lastName}</td>
                   <td>
-                    {holder.policies.map(policyHolderPolicy => (
-                      <span key={policyHolderPolicy.insurancePolicyId}>
-                        {policyHolderPolicy.insurancePolicy.name}
-                      </span>
-                    )).join(', ')}
+                    {holder.policies
+                      .map(
+                        (policyHolderPolicy) =>
+                          policyHolderPolicy.insurancePolicy.id
+                      )
+                      .join(", ")}
                   </td>
                 </tr>
               ))}

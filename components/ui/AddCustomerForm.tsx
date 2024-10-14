@@ -1,8 +1,18 @@
 import { redirect } from 'next/navigation';
 import { db } from '../../db';
-import '../../styles/formStyles.css'; // Import the shared styles
+import '../../styles/formStyles.css'; 
 
-export default function AddCustomerForm() {
+export default async function AddCustomerForm() { 
+  const insurancePolicies = await db.insurancePolicy.findMany({      
+    select: {
+      id: true,
+      name: true,
+    },
+    orderBy: {
+      name: 'asc', 
+    },
+  });
+
   async function handleSubmit(formData: FormData) {
     'use server';
     const id = formData.get('nric') as string;
@@ -17,7 +27,9 @@ export default function AddCustomerForm() {
         email,
         firstName,
         lastName,
-        policies, 
+        policies: {
+          create: policies.map(policy => ({ insurancePolicyId: policy })),
+        },
       },
     });
 
@@ -80,14 +92,11 @@ export default function AddCustomerForm() {
           required
         >
           <option value="" disabled>Select one or more policies</option>
-          <option value="policy_id_1">Travel Insurance</option>
-          <option value="policy_id_2">Health Insurance</option>
-          <option value="policy_id_3">Home Insurance</option>
-          <option value="policy_id_4">Business Insurance</option>
-          <option value="policy_id_5">Car Insurance</option>
-          <option value="policy_id_6">Personal Accident</option>
-          <option value="policy_id_7">Critical Illness</option>
-          <option value="policy_id_8">Life Insurance</option>
+          {insurancePolicies.map(policy => (
+            <option key={policy.id} value={policy.id}>
+              {policy.name}
+            </option>
+          ))}
         </select>
       </div>
 
